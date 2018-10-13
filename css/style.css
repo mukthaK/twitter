@@ -1,0 +1,149 @@
+html,
+body {
+    Font-Family: Sans-Serif;
+}
+
+.userInfo {
+    float: left;
+    /*    width: 300px;*/
+    width: 27%;
+
+}
+.left{
+    text-align: center;
+}
+.userInfo,
+.tweetPost,
+.recentTweets {
+/*    margin: 15px;*/
+    padding: 15px;
+}
+
+.tweetPost,
+.recentTweets {
+/*    float: left;*/
+    /*    width: 700px;*/
+/*
+    width: 60%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+*/
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: solid 1px black;
+    float: left;
+    margin: 0;
+    margin-right: 25px;
+}
+
+h1 {
+    padding: 15px;
+    width: 0px;
+    margin: 0;
+}
+
+.profile {
+    border-bottom: solid 1px grey;
+/*
+    padding-bottom: 20px;
+    padding-top: 30px;
+*/
+    padding: 30px 10px 20px 10px;
+    text-align: center;
+}
+
+.profile1 {
+    padding: 5px;
+    display: flex;
+}
+
+.profile1 span {
+    padding: 5px;
+    font-size: 14px;
+}
+
+section {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    /* text-align: center; */
+    max-width: 1200px;
+}
+
+/*
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+*/
+
+.postBtn {
+    position: absolute;
+    margin: 0 10px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: solid 2px black;
+    background-color: #C3E8E8;
+}
+
+.tweetMsg {
+    /*    text-align: left;*/
+    padding: 5px;
+    border: solid 1px black;
+}
+
+.error{
+    color: red;
+}
+
+.right{
+    float: left;
+    width: 65%;
+    padding: 20px;
+}
+#allTweets span {
+    padding: 3px 15px 3px 0;
+/*    font-weight: 600;*/
+}
+#allTweets p{
+    margin: 5px 0 25px 0;
+    color: #000000ba;
+}
+
+/* Responsive media queries */
+
+@media (min-width: 600px) and (max-width: 768px) {
+    img {
+        height: 80px;
+        width: 80px;
+        margin-right: 15px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+    .postBtn {
+        padding: 5px 18px;
+    }
+    .profile1 span {
+        padding: 4px;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 600px) {
+    section{
+        flex-direction: column;
+    }
+    .left,
+    .right {
+        width: 100%;
+    }
+    .postBtn {
+        padding: 5px 20px;
+    }
+}

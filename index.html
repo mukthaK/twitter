@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Twitter</title>
+    <!-- Responsive Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Landing screen/User Dashboard -->
+    <main role="main" id="">
+        <section>
+            <div class="userInfo left">
+                <div class="profile">
+                    <img id="userImage" src="" alt="user profile image">
+                    <h1 id="userName"></h1>
+                </div>
+                <div class="profile1">
+                    <span id="tweets"></span>
+                    <span id="followers"></span>
+                    <span id="following"></span>
+                </div>
+            </div>
+            <div class="right">
+            <div class="tweetPost">
+                <form role="form" id="tweetForm">
+                    <textarea class="tweetMsg" rows="6" cols="40" placeholder="What's happening?" required></textarea>
+                    <button class="postBtn" id=""><i class="far fa-paper-plane" aria-hidden="true"></i>&nbsp;Post</button>
+                </form>
+                <p class="error"></p>
+            </div>
+            <div class="recentTweets">
+                <h2>Recent tweets</h2>
+                <div id="allTweets"></div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer for the page -->
+    <footer role="contentinfo" class="footer-container">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>
