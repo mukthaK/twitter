@@ -1,5 +1,5 @@
 var userState = {};
-
+//Get the tweet message and POST it
 $('#tweetForm').submit(function (event) {
     event.preventDefault();
 
@@ -28,12 +28,14 @@ $('#tweetForm').submit(function (event) {
         dataType: 'json',
         method: 'POST'
     }).done(function (data) {
+        //display tweets
         displayRecentTweets();
     }).fail(function () {
         $('.error').html("Oops! Tweet failed. Try again");
     });
 });
 
+// Displaying the recent tweets
 function displayRecentTweets() {
     $.ajax({
         url: 'http://mock.aphetech.com/feed',
@@ -60,32 +62,25 @@ function displayRecentTweets() {
     });
 }
 
+// On load, user details are populated
 $(document).ready(function () {
     $.ajax({
         url: 'http://mock.aphetech.com/profile',
         dataType: 'jsonp',
         method: 'GET'
     }).done(function (data) {
-        // Set global variable to hold user data
-//        userState = {
-//            name: data.name,
-//            handle: data.handle,
-//            imageUrl: data.imageUrl,
-//            followers: data.followers,
-//            following: data.following,
-//            tweets: data.tweets
-//        };
-        userState.name = data.name;
-        userState.handle = data.handle;
+            // Set global variable to hold user data
+            userState.name = data.name;
+            userState.handle = data.handle;
+            // Append result to html
+            $('#userImage').attr('src', data.imageUrl);
+            $('#userName').html(data.name);
+            $('#tweets').html(`${data.tweets} tweets`);
+            $('#followers').html(`${data.followers} followers`);
+            $('#following').html(`${data.following} following`);
+            //display tweets
+            displayRecentTweets();
 
-        // Append result to html
-        $('#userImage').attr('src', data.imageUrl);
-        $('#userName').html(data.name);
-        $('#tweets').html(`${data.tweets} tweets`);
-        $('#followers').html(`${data.followers} followers`);
-        $('#following').html(`${data.following} following`);
-        //display tweets
-        displayRecentTweets();
     }).fail(function () {
         $('.error').html("Error getting user information");
     });
